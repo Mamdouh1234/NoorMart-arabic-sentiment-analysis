@@ -1,0 +1,17 @@
+# Ignore Model Files
+*.keras
+*.h5
+*.pb
+
+# Ignore Python Cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore Virtual Environments
+venv/
+.venv/
+env/
+
+# Ignore OS files
+.DS_Store
