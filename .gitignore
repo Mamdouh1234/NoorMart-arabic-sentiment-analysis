@@ -15,3 +15,6 @@ env/
 
 # Ignore OS files
 .DS_Store
+
+# Ignore Windows metadata files
+*:Zone.Identifier

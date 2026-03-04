@@ -5,10 +5,10 @@ import numpy as np
 from typing import List  # <-- Added to support lists
 from utils import clean_arabic
 
-# 1. Initialize the FastAPI app
+#Initialize the FastAPI app
 app = FastAPI(title="Arabic Sentiment API", version="1.0")
 
-# 2. Load the model ONCE when the server starts
+# Load the model ONCE when the server starts
 # We use the end-to-end model that includes the vectorizer
 MODEL_PATH = "arabic_sentiment.keras"
 try:
@@ -19,15 +19,15 @@ except Exception as e:
 # The labels exactly as defined in your notebook
 LABELS = ['neutral', 'positive', 'negative']
 
-# 3. Define the expected request payload format
+# Define the expected request payload format
 class SentimentRequest(BaseModel):
-    text: List[str]  # <-- Changed to List[str] to support multiple texts in one request
+    text: List[str]  
 
 @app.get("/")
 def home():
     return {"message": "Arabic Sentiment API is running! Go to /docs for testing."}
 
-# 4. Create the prediction endpoint
+#Create the prediction endpoint
 @app.post("/predict")
 async def predict_sentiment(request: SentimentRequest):
     if not request.text:
