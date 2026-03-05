@@ -78,7 +78,7 @@ This project is prepared as a production-ready, containerized microservice using
 - The trained .keras model is hosted on Hugging Face. To fetch it, run the included automated download script:
 `python download_model.py`
 
-- You can also download the model directly from Hugging Face Hub:[here] Mamdouh-Alaa12/Arabic-Sentiment-Analysis
+- You can also download the model directly from Hugging Face Hub:[here](https://huggingface.co/Mamdouh-Alaa12/Arabic-Sentiment-Analysis)
 
 2- Build the Docker Image
 Instead of worrying about library versions and local environments, build the self-contained Docker image:
@@ -87,9 +87,11 @@ Instead of worrying about library versions and local environments, build the sel
 
 3- Run the Container
 - Start the API server on your local machine:
+
 `docker run -p 8000:8000 --name noormart-container arabic-sentiment-api`
 
 - If you stop the container or restart your computer, you don't need to run it again (which creates a duplicate). Instead, use:
+
 `docker start noormart-container`
 
 4- Test the model
