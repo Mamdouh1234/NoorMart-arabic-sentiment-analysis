@@ -71,9 +71,14 @@ After evaluating on the unseen holdout test set, the final model achieved the fo
 This project is prepared as a production-ready, containerized microservice using FastAPI and Docker. The heavy model weights are hosted externally on a Model Registry (Hugging Face) to keep the source code repository lightweight and professional.
 
 1- Download the Pre-trained Model
-The trained .keras model is hosted on Hugging Face. To fetch it, run the included automated download script:
 
-Hugging Face Hub: Mamdouh-Alaa12/Arabic-Sentiment-Analysis
+- Ensure you have Python installed and the Hugging Face Hub library:
+`pip install huggingface_hub`
+
+- The trained .keras model is hosted on Hugging Face. To fetch it, run the included automated download script:
+`python download_model.py`
+
+- You can also download the model directly from Hugging Face Hub:[here] Mamdouh-Alaa12/Arabic-Sentiment-Analysis
 
 2- Build the Docker Image
 Instead of worrying about library versions and local environments, build the self-contained Docker image:
@@ -81,9 +86,11 @@ Instead of worrying about library versions and local environments, build the sel
 `docker build -t arabic-sentiment-api .`
 
 3- Run the Container
-Start the API server on your local machine:
+- Start the API server on your local machine:
+`docker run -p 8000:8000 --name noormart-container arabic-sentiment-api`
 
-`docker run -p 8000:8000 arabic-sentiment-api`
+- If you stop the container or restart your computer, you don't need to run it again (which creates a duplicate). Instead, use:
+`docker start noormart-container`
 
 4- Test the model
 Once the server is running, you can test it by running the client integration script:
