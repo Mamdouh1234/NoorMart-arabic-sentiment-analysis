@@ -15,30 +15,30 @@ This system can be seamlessly integrated into NoorMart's backend architecture. A
 
 - Resource Optimization: Reduces the need for manual ticket tagging, allowing human agents to focus on resolving actual complex issues.
 
-Evaluation Metric: In customer service, missing a negative complaint is a catastrophic failure. Because the "Neutral" class naturally dominates everyday interactions, standard Accuracy is a misleading metric (a model could guess "Neutral" every time and score highly). Therefore, this project strictly optimizes for the F1-Score, ensuring the model heavily penalizes False Negatives and maintains high precision and recall across all customer emotions.
+**Evaluation Metric**: In customer service, missing a negative complaint is a catastrophic failure. Because the "Neutral" class naturally dominates everyday interactions, standard Accuracy is a misleading metric (a model could guess "Neutral" every time and score highly). Therefore, this project strictly optimizes for the F1-Score, ensuring the model heavily penalizes False Negatives and maintains high precision and recall across all customer emotions.
 
 ## Dataset
 
 ## Model Architecture
 The core engine is a Deep Recurrent Neural Network designed specifically to understand the sequential context of Arabic text. It utilizes the following architecture:
 
-- Input Layer: TextVectorization layer configured for a customized vocabulary size of 107,884 tokens (covering 95% of the dataset) and padded to 512 sequence length.
+- **Input Layer**: TextVectorization layer configured for a customized vocabulary size of 107,884 tokens (covering 95% of the dataset) and padded to 512 sequence length.
 
-- Embedding Layer: Pre-trained AraVec (Word2Vec CBOW 300-d Twitter model) weights are injected here and set to be trainable for fine-tuning.
+- **Embedding Layer**: Pre-trained AraVec (Word2Vec CBOW 300-d Twitter model) weights are injected here and set to be trainable for fine-tuning.
 
-- SpatialDropout1D: Set to 0.3 for robust regularization on the embedding vectors.
+- **SpatialDropout1D**: Set to 0.3 for robust regularization on the embedding vectors.
 
-- First Bi-LSTM Layer: Bidirectional LSTM (64 units) returning full sequences.
+- **First Bi-LSTM Layer**: Bidirectional LSTM (64 units) returning full sequences.
 
-- Dropout Layer: Set to 0.4 to prevent overfitting.
+- **Dropout Layer**: Set to 0.4 to prevent overfitting.
 
-- Second Bi-LSTM Layer: Bidirectional LSTM (64 units) returning the final summarized context vector.
+- **Second Bi-LSTM Layer**: Bidirectional LSTM (64 units) returning the final summarized context vector.
 
-- Dense Layer: 64 neurons with a ReLU activation function and L2 Regularization (1e-4).
+- **Dense Layer**: 64 neurons with a ReLU activation function and L2 Regularization (1e-4).
 
-- Dropout Layer: Set to 0.3.
+- **Dropout Layer**: Set to 0.3.
 
-- Output Layer: Dense layer with 3 neurons and a Softmax activation function (for multi-class classification: Positive, Neutral, Negative).
+- **Output Layer**: Dense layer with 3 neurons and a Softmax activation function (for multi-class classification: Positive, Neutral, Negative).
 
 
 ## Model compilation 
