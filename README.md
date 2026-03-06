@@ -1,4 +1,4 @@
-# 🚀 NoorMart: Production-Ready Arabic Sentiment Analysis
+# 🚀 NoorMart: Arabic Sentiment Analysis
 
 AI-powered Arabic sentiment analysis system for multiclass customer feedback classification (positive, negative, neutral) enabling data-driven business insights.
 
