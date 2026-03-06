@@ -105,6 +105,6 @@ Once the server is running, you can test it by running the client integration sc
 
 `python client.py`
 
-### 🔬 Research & Development
+## 🔬 Research & Development
 The full exploratory data analysis (EDA), text preprocessing experiments, and model training iterations are documented in the Jupyter Notebook:
 👉[NoorMart-Arabic-Sentiment-Analysis.ipynb](/notebooks/NoorMart-Arabic-Sentiment-Analysis.ipynb)
