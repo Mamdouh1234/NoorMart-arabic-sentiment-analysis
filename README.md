@@ -19,6 +19,10 @@ This system can be seamlessly integrated into NoorMart's backend architecture. A
 
 ## Dataset
 
+Two data sets were used in this project:
+- First one is "ASAD: A Twitter-Based Benchmark Arabic Sentiment Analysis" dataset from kaggle, you can check the dataset details [here](https://www.kaggle.com/code/asalhi/arabic-sentiment-analysis-2nd-place-winning-code/input)
+- Second one is "https://www.kaggle.com/code/abedkhooli/ar-reviews-100k" dataset, also from kaggle, check it's details [here](https://www.kaggle.com/code/abedkhooli/ar-reviews-100k)
+
 ## Model Architecture
 The core engine is a Deep Recurrent Neural Network designed specifically to understand the sequential context of Arabic text. It utilizes the following architecture:
 
